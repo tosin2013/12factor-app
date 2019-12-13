@@ -13,8 +13,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-oc scale dc/my12factorapp --replicas=1
-oc patch svc/mysql -p '{"spec":{"ports":[{"name": "5000-tcp", "port": 5000, "targetPort": 3306}]}}'
-oc set env dc/my12factorapp port=5000
-echo "Open the URL:  http://$(oc get route | grep my12factorapp| awk '{print $2}')/api/db"
-echo "Database port 3306 was bound to port 5000"
+
+###
+##Change to config map
+###
+if [[ -f openshift-env ]]; then
+  source openshift-env
+else
+  echo "openshift-env not found!!"
+  exit 1
+fi
+
+echo "Setting Enviornment using Enviornment variable"
+oc set env dc/my12factorapp GREETING="Hi {name}! - My Configuration has changed"
+echo "Configuration updated. Please check again http://$(oc get route | grep my12factorapp| awk '{print $2}')/api/hello/developer"

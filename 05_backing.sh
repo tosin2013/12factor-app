@@ -13,8 +13,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-oc scale dc/my12factorapp --replicas=1
-oc patch svc/mysql -p '{"spec":{"ports":[{"name": "5000-tcp", "port": 5000, "targetPort": 3306}]}}'
-oc set env dc/my12factorapp port=5000
-echo "Open the URL:  http://$(oc get route | grep my12factorapp| awk '{print $2}')/api/db"
-echo "Database port 3306 was bound to port 5000"
+echo "Deploying a database"
+oc new-app --name mysql -e MYSQL_USER=myuser -e MYSQL_PASSWORD=mypassword -e MYSQL_DATABASE=mydatabase openshift/mysql-56-centos7
+echo "Attach it to the app"
+oc set env dc/my12factorapp host=mysql username=myuser password=mypassword database=mydatabase GREETING-
+echo "Open the URL: http://$(oc get route | grep my12factorapp| awk '{print $2}')/api/db"

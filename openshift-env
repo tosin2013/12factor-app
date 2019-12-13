@@ -1,0 +1,6 @@
+# Sample OpenShift Endpoint 
+export OPENSHIFT_ENDPOINT=""
+export PORTNUMBER=""
+export USER=""
+export USING_MINISHIFT=FALSE
+export JENKINS_TEMPLATE_NAME="jenkins-ephemeral"
