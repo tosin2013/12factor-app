@@ -1,6 +1,6 @@
 # Helloworld - WIP
 
-## Requirements on OpenShift clusterci
+## Requirements on OpenShift cluster
 Ensure Jenkins has the approprate permissions to project if you are not cluster-admin
 After the Jenkins pod has deployed under the 00_setup.sh
 ```
@@ -12,8 +12,9 @@ The slides of this presentation are available at <http://bit.ly/12factors-app>
 
 To use the scripts, Create and Source the following file.
 ```
+## Sample OpenShift Endpoint
+```
 $ cat openshift-env
-# Sample OpenShift Endpoint
 export OPENSHIFT_ENDPOINT=""
 export PORTNUMBER=""
 export USER=""
@@ -21,10 +22,10 @@ export USING_MINISHIFT=FALSE
 export JENKINS_TEMPLATE_NAME="jenkins-ephemeral"
 ```
 
-Examples:
+## Examples:
+**Sample OpenShift 4.x Endpoint**
 ```
 $ cat openshift-env
-# Sample OpenShift 4.x Endpoint
 export OPENSHIFT_ENDPOINT="api.example.com"
 export PORTNUMBER="6443"
 export USER="developer"
@@ -32,9 +33,9 @@ export USING_MINISHIFT=FALSE
 export JENKINS_TEMPLATE_NAME="jenkins-ephemeral"
 ```
 
+**Sample OpenShift 3.11.x Endpoint**
 ```
 $ cat openshift-env
-# Sample OpenShift 3.11.x Endpoint
 export OPENSHIFT_ENDPOINT="lb.example.com"
 export PORTNUMBER="8443"
 export USER="developer"
@@ -42,7 +43,7 @@ export USING_MINISHIFT=FALSE
 export JENKINS_TEMPLATE_NAME="jenkins-ephemeral"
 ```
 
-Build and Deploy helloworld-service locally
+**Build and Deploy helloworld-service locally**
 ------------------------------------------
 
 1. Open a command prompt and navigate to the root directory of this microservice.
@@ -59,36 +60,36 @@ Build and Deploy helloworld-service locally
 https://github.com/tosin2013/12factor-app.git
 ````
 
-*Dependencies* – use a package manager and don’t commit dependencies in the codebase repository. OpenShift allows for native language dependency management sytems to be used in this lab we will be using maven. To Build the Java Application.
-Excercises: 01_build.sh
+*Dependencies* – use a package manager and don’t commit dependencies in the codebase repository. OpenShift allows for native language dependency management sytems to be used in this lab we will be using maven. To Build the Java Application.  
+Excercises: 01_build.sh  
 
-*Config* – store the config in Environment Variable, if you have to repackage your application, you’re doing it wrong. OpenShift Allows this using features called ConfigMaps.
-Exercises: 04_config.sh
-[Using ConfigMaps](https://github.com/tosin2013/openshift-demos/blob/master/configmaps.md)
+*Config* – store the config in Environment Variable, if you have to repackage your application, you’re doing it wrong. OpenShift Allows this using features called ConfigMaps.  
+Exercises: 04_config.sh  
+[Using ConfigMaps](https://github.com/tosin2013/openshift-demos/blob/master/configmaps.md)  
 
-*Backing Services* – a deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS ) without any changes to the app’s code. OpenShift allows for external databases to be used with your service.
-Exercises: 04_backing.sh, 04_populatedb.sh
+*Backing Services* – a deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS ) without any changes to the app’s code. OpenShift allows for external databases to be used with your service.  
+Exercises: 04_backing.sh, 04_populatedb.sh  
 
-*Build, Release, Run* – the twelve-factor app uses strict separation between the build, release, and run stages. Every release should always have a unique release ID and releases should allow rollback.
-Exercises: 01_build.sh, 02_release.sh, 03_run.sh
+*Build, Release, Run* – the twelve-factor app uses strict separation between the build, release, and run stages. Every release should always have a unique release ID and releases should allow rollback.  
+Exercises: 01_build.sh, 02_release.sh, 03_run.sh  
 
-*Processes* – execute the app as one or more stateless processes, the Twelve-factor processes are stateless and share-nothing .
+*Processes* – execute the app as one or more stateless processes, the Twelve-factor processes are stateless and share-nothing.  
 Exercises:
 
-*Port Binding* – export services via port binding, The twelve-factor app is completely self-contained.
-Exercises:
+*Port Binding* – export services via port binding, The twelve-factor app is completely self-contained.  
+Exercises:  
 
 *Concurrency* – scale out via the process model. Each process should be individually scaled, with Factor 6 (Stateless), it is easy to scale the services.
-Exercises:
+Exercises:  
 
-*Disposability* – maximize robustness with fast startup and graceful shutdown, we can achieve this with containers.
-Exercises:
+*Disposability* – maximize robustness with fast startup and graceful shutdown, we can achieve this with containers.  
+Exercises:  
 
-*Dev/Prod Parity* – Keep development, staging, and production as similar as possible, the twelve-factor app is designed for continuous deployment by keeping the gap between development and production small.
-Exercises:
+*Dev/Prod Parity* – Keep development, staging, and production as similar as possible, the twelve-factor app is designed for continuous deployment by keeping the gap between development and production small.  
+Exercises:  
 
-*Logs* – treat logs as event streams, a twelve-factor app never concerns itself with routing or storage of its output stream.
-Exercises:
+*Logs* – treat logs as event streams, a twelve-factor app never concerns itself with routing or storage of its output stream.  
+Exercises:  
 
-*Admin Processes* – run admin/management tasks as one-off processes.
-Exercises:
+*Admin Processes* – run admin/management tasks as one-off processes.  
+Exercises:  
