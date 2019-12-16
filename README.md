@@ -69,7 +69,7 @@ Exercises: 04_config.sh
 [Using ConfigMaps](https://github.com/tosin2013/openshift-demos/blob/master/configmaps.md)  
 
 **Backing Services** – a deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS ) without any changes to the app’s code. OpenShift allows for external databases to be used with your service.  
-Exercises: 04_backing.sh, 04_populatedb.sh  
+Exercises: 05_backing.sh, 06_populatedb.sh  
 
 **Build, Release, Run** – the twelve-factor app uses strict separation between the build, release, and run stages. Every release should always have a unique release ID and releases should allow rollback.  
 Exercises: 01_build.sh, 02_release.sh, 03_run.sh  
@@ -78,7 +78,7 @@ Exercises: 01_build.sh, 02_release.sh, 03_run.sh
 Exercises:
 
 **Port Binding** – export services via port binding, The twelve-factor app is completely self-contained.  
-Exercises:  
+Exercises:  07_port-binding.sh
 
 **Concurrency** – scale out via the process model. Each process should be individually scaled, with Factor 6 (Stateless), it is easy to scale the services.
 Exercises:  

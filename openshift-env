@@ -1,6 +1,6 @@
 # Sample OpenShift Endpoint 
-export OPENSHIFT_ENDPOINT=""
-export PORTNUMBER=""
-export USER=""
+export OPENSHIFT_ENDPOINT="api.cluster-citco-e53c.citco-e53c.example.opentlc.com"
+export PORTNUMBER="6443"
+export USER="opentlc-mgr"
 export USING_MINISHIFT=FALSE
 export JENKINS_TEMPLATE_NAME="jenkins-ephemeral"
