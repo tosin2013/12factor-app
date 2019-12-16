@@ -75,22 +75,22 @@ Exercises: 05_backing.sh, 06_populatedb.sh
 Exercises: 01_build.sh, 02_release.sh, 03_run.sh  
 
 **Processes** – execute the app as one or more stateless processes, the Twelve-factor processes are stateless and share-nothing.  
-Exercises:
+Exercises: 03_run.sh
 
 **Port Binding** – export services via port binding, The twelve-factor app is completely self-contained.  
 Exercises:  07_port-binding.sh
 
 **Concurrency** – scale out via the process model. Each process should be individually scaled, with Factor 6 (Stateless), it is easy to scale the services.
-Exercises:  
+Exercises: 08_concurrency.sh 
 
 **Disposability** – maximize robustness with fast startup and graceful shutdown, we can achieve this with containers.  
-Exercises:  
+Exercises:  09_disposability.sh
 
 **Dev/Prod Parity** – Keep development, staging, and production as similar as possible, the twelve-factor app is designed for continuous deployment by keeping the gap between development and production small.  
-Exercises:  
+Exercises:  10_deploy-staging.sh
 
 **Logs** – treat logs as event streams, a twelve-factor app never concerns itself with routing or storage of its output stream.  
-Exercises:  
+Exercises:  11_logs.sh
 
 **Admin Processes** – run admin/management tasks as one-off processes.  
-Exercises:  
+Exercises:  12_admin.sh
