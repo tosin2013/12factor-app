@@ -6,12 +6,12 @@ After the Jenkins pod has deployed under the 00_setup.sh
 ```
 oc new-project ci
 oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:ci:jenkins -n ci
-``
+```
 
 The slides of this presentation are available at <http://bit.ly/12factors-app>
 
 To use the scripts, Create and Source the following file.
-```
+
 ## Sample OpenShift Endpoint
 You will need to edit the file called openshift-env. It currently looks like below. Fill in the appropriate information.  Examples of OCP 3.x and 4.x can be found below. 
 ```
