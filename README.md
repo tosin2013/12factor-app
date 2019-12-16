@@ -1,7 +1,7 @@
-# Helloworld - WIP
+# Helloworld
 
 ## Requirements on OpenShift cluster
-Ensure Jenkins has the approprate permissions to project if you are not cluster-admin
+Ensure Jenkins has the appropriate permissions to project if you are not cluster-admin
 After the Jenkins pod has deployed under the 00_setup.sh
 ```
 oc new-project ci
@@ -13,7 +13,7 @@ The slides of this presentation are available at <http://bit.ly/12factors-app>
 To use the scripts, Create and Source the following file.
 
 ## Sample OpenShift Endpoint
-You will need to edit the file called openshift-env. It currently looks like below. Fill in the appropriate information.  Examples of OCP 3.x and 4.x can be found below. 
+You will need to edit the file called openshift-env. It currently looks like below. Fill in the appropriate information.  Examples of OCP 3.x and 4.x can be found below.
 ```
 $ cat openshift-env
 export OPENSHIFT_ENDPOINT=""
@@ -61,8 +61,8 @@ export JENKINS_TEMPLATE_NAME="jenkins-ephemeral"
 https://github.com/tosin2013/12factor-app.git
 ````
 
-**Dependencies** – use a package manager and don’t commit dependencies in the codebase repository. OpenShift allows for native language dependency management sytems to be used in this lab we will be using maven. To Build the Java Application.  
-Excercises: 01_build.sh  
+**Dependencies** – use a package manager and don’t commit dependencies in the codebase repository. OpenShift allows for native language dependency management systems to be used in this lab we will be using maven. To Build the Java Application.  
+Exercises: 01_build.sh  
 
 **Config** – store the config in Environment Variable, if you have to repackage your application, you’re doing it wrong. OpenShift Allows this using features called ConfigMaps.  
 Exercises: 04_config.sh  
@@ -81,7 +81,7 @@ Exercises: 03_run.sh
 Exercises:  07_port-binding.sh
 
 **Concurrency** – scale out via the process model. Each process should be individually scaled, with Factor 6 (Stateless), it is easy to scale the services.
-Exercises: 08_concurrency.sh 
+Exercises: 08_concurrency.sh
 
 **Disposability** – maximize robustness with fast startup and graceful shutdown, we can achieve this with containers.  
 Exercises:  09_disposability.sh
